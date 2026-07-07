@@ -1,0 +1,229 @@
+# ROSTI POULET - Apache Configuration (.htaccess)
+# Optimisations SEO, performance et sécurité
+
+# ============================================
+# 1. ACTIVER MOD_REWRITE
+# ============================================
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS (décommenter si SSL activé)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Supprimer www (optionnel)
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Redirection www vers non-www
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# ============================================
+# 2. COMPRESSION GZIP
+# ============================================
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE image/svg+xml
+
+# Exclure certains types
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|rar|zip|exe|flv|mov|wma|wmv|webp)$ no-gzip dont-vary
+</IfModule>
+
+# ============================================
+# 3. CACHE NAVIGATEUR
+# ============================================
+<IfModule mod_expires.c>
+ExpiresActive On
+
+# Images (1 an)
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType image/webp "access 1 year"
+ExpiresByType image/svg+xml "access 1 year"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresByType image/vnd.microsoft.icon "access 1 year"
+
+# CSS & JavaScript (1 mois)
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/javascript "access 1 month"
+ExpiresByType text/javascript "access 1 month"
+
+# Fonts (1 an)
+ExpiresByType font/ttf "access 1 year"
+ExpiresByType font/otf "access 1 year"
+ExpiresByType font/eot "access 1 year"
+ExpiresByType font/woff "access 1 year"
+ExpiresByType font/woff2 "access 1 year"
+ExpiresByType application/font-woff "access 1 year"
+
+# HTML (1 semaine)
+ExpiresByType text/html "access 1 week"
+
+# Documents
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/plain "access 1 month"
+
+# Par défaut
+ExpiresDefault "access 2 days"
+</IfModule>
+
+# Cache headers via mod_headers
+<IfModule mod_headers.c>
+# Images
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|webp|svg)$">
+Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# CSS et JS
+<FilesMatch "\.(css|js)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+# Fonts
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
+Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# HTML
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+# Par défaut
+Header set Cache-Control "max-age=172800, public"
+</IfModule>
+
+# ============================================
+# 4. SÉCURITÉ - HEADERS HTTP
+# ============================================
+<IfModule mod_headers.c>
+
+# Empêcher le clickjacking
+Header set X-Frame-Options "SAMEORIGIN"
+
+# Empêcher MIME-type sniffing
+Header set X-Content-Type-Options "nosniff"
+
+# XSS Protection
+Header set X-XSS-Protection "1; mode=block"
+
+# Referrer Policy
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Permissions Policy
+Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# HSTS (décommenter si SSL activé)
+# Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Supprimer la version Apache
+Header always unset X-Powered-By
+Header unset X-Powered-By
+
+</IfModule>
+
+# ============================================
+# 5. TYPES MIME
+# ============================================
+AddType text/html .html .htm
+AddType text/css .css
+AddType application/javascript .js
+AddType application/json .json
+AddType image/webp .webp
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddEncoding gzip .webp
+
+# ============================================
+# 6. BLOQUER L'ACCÈS AUX FICHIERS SENSIBLES
+# ============================================
+<FilesMatch "^(\.htaccess|\.htpasswd|\.env|\.git|\.gitignore)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Bloquer l'accès aux dossiers sensibles
+<Directory ~ "^\.">
+Order allow,deny
+Deny from all
+</Directory>
+
+# ============================================
+# 7. PROTECTION CONTRE LES ATTAQUES COURANTES
+# ============================================
+
+# Bloquer les accès directory listing
+<IfModule mod_autoindex.c>
+Options -Indexes
+</IfModule>
+
+# Bloquer accès XML-RPC (WordPress)
+<FilesMatch "^xmlrpc\.php$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# Bloquer CommonHTTPRequest.conf
+<Files "CommonHTTPRequest.conf">
+Order allow,deny
+Deny from all
+</Files>
+
+# ============================================
+# 8. GESTION DES ERREURS
+# ============================================
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+
+# ============================================
+# 9. UTF-8 ENCODING
+# ============================================
+AddDefaultCharset UTF-8
+<Files *.html>
+AddCharset UTF-8 .html
+</Files>
+<Files *.css>
+AddCharset UTF-8 .css
+</Files>
+<Files *.js>
+AddCharset UTF-8 .js
+</Files>
+
+# ============================================
+# 10. OPTIMISATIONS SUPPLÉMENTAIRES
+# ============================================
+
+# Autoriser accès fichiers spécifiques
+<Files sitemap.xml>
+Allow from all
+</Files>
+
+<Files robots.txt>
+Allow from all
+</Files>
+
+# Variables d'environnement
+SetEnv ENVIRONMENT production
+
+# ============================================
+# FIN DE CONFIGURATION .HTACCESS
+# ============================================
+# Dernière mise à jour : Janvier 2024
+# Pour ROSTI POULET - Praticien bien-être

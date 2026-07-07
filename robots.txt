@@ -1,0 +1,50 @@
+# Robots.txt pour ROSTI POULET
+# Optimisation SEO et gestion des crawleurs
+
+# Règles pour tous les agents
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /specialites.html
+Allow: /services.html
+Allow: /avis.html
+Allow: /contact.html
+Allow: /mentions-legales.html
+Allow: /conditions.html
+Allow: /privacy.html
+Allow: /assets/
+Allow: /*.webp
+Allow: /*.css
+Allow: /*.js
+
+# Désactiver les pages à ne pas indexer
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?utm_
+Disallow: /*?tracking=
+
+# Crawler delay (respecter les ressources serveur)
+Crawl-delay: 1
+
+# Spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+Request-rate: 60/1m
+
+# Spécifiques pour Bing
+User-agent: Bingbot
+Allow: /
+Request-rate: 30/1m
+
+# Spécifiques pour Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://www.rostipoulet.fr/sitemap.xml
+
+# Informations générales
+# Créé pour ROSTI POULET - Praticien bien-être
+# Dernière mise à jour : janvier 2024

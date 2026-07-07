@@ -1,0 +1,200 @@
+{
+  "site": {
+    "name": "ROSTI POULET",
+    "tagline": "Poulet braisé à emporter",
+    "domain": "www.rostipoulet.fr",
+    "language": "fr",
+    "timezone": "Europe/Paris"
+  },
+  "contact": {
+    "email": "contact@rostipoulet.fr",
+    "phone": "06 XX XX XX XX",
+    "whatsapp": "33612345678",
+    "address": "2 rue Léon Blum",
+    "city": "Creil",
+    "postal_code": "60100",
+    "country": "France"
+  },
+  "business": {
+    "siret": "98002696700011",
+    "siren": "980026967",
+    "activity": "Restaurant de poulet braisé - vente à emporter et Click & Collect",
+    "website_launch": "2024-01-15",
+    "business_hours": {
+      "monday": "11:30-22:30",
+      "tuesday": "11:30-22:30",
+      "wednesday": "11:30-22:30",
+      "thursday": "11:30-22:30",
+      "friday": "11:30-22:30",
+      "saturday": "11:30-22:30",
+      "sunday": "11:30-22:30"
+    }
+  },
+  "seo": {
+    "title": "ROSTI POULET - Poulet braisé à emporter | Click & Collect à Creil",
+    "meta_description": "ROSTI POULET - Restaurant de poulet braisé à emporter à Creil (60100). Poulet mariné et braisé, tenders, bricks, riz thaï, boissons maison Bissap et Gingembre. Commandez en Click & Collect.",
+    "keywords": [
+      "poulet braisé",
+      "poulet à emporter",
+      "click and collect",
+      "restaurant poulet",
+      "tenders",
+      "poulet frit",
+      "bissap",
+      "riz thaï poulet",
+      "allocos"
+    ],
+    "og_image": "unnamed.webp",
+    "og_type": "restaurant"
+  },
+  "analytics": {
+    "google_analytics_id": "GA_XXXXXXXX",
+    "google_search_console": "https://search.google.com/search-console",
+    "google_my_business": "https://share.google/ZjomRvG93GvUSiyg5",
+    "google_maps_embed": "https://www.google.com/maps/embed?pb=YOUR_CODE"
+  },
+  "integrations": {
+    "formspree": {
+      "enabled": false,
+      "form_id": "f/YOUR_FORM_ID"
+    },
+    "discord_webhook": {
+      "enabled": false,
+      "url": "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL"
+    },
+    "stripe": {
+      "enabled": false,
+      "public_key": "pk_live_YOUR_KEY"
+    }
+  },
+  "categories": {
+    "poulet": {
+      "name": "Le poulet braisé",
+      "description": "Poulet mariné aux épices puis braisé au feu, chair fondante et peau croustillante",
+      "image": "unnamed (4).webp"
+    },
+    "fritures": {
+      "name": "Tenders, bricks & donuts",
+      "description": "Fritures maison panées et dorées à la commande",
+      "image": "unnamed (3).webp"
+    },
+    "accompagnements": {
+      "name": "Accompagnements",
+      "description": "Riz thaï poulet, allocos, légumes grillés, pommes de terre, pâtes poulet crème",
+      "image": "unnamed (5).webp"
+    },
+    "boissons": {
+      "name": "Boissons & desserts",
+      "description": "Boissons maison Bissap, Gingembre, canettes et desserts",
+      "image": "unnamed (1).webp"
+    }
+  },
+  "menu": {
+    "detail": [
+      { "name": "Poulet entier", "price": 8.00 },
+      { "name": "Demi-poulet", "price": 4.00 },
+      { "name": "Cuisse de poulet", "price": 2.50 },
+      { "name": "Blanc de poulet", "price": 3.50 },
+      { "name": "4 ailes de poulet", "price": 2.50 },
+      { "name": "3 pilons", "price": 2.50 },
+      { "name": "Brochette de poulet", "price": 2.00 },
+      { "name": "Saucisse", "price": 1.50 },
+      { "name": "Brick au poulet", "price": 2.00 },
+      { "name": "Donuts poulet", "price": 2.00 },
+      { "name": "3 tenders", "price": 2.50 },
+      { "name": "Darne de poisson", "price": 2.00 }
+    ],
+    "menus": [
+      { "name": "Menu demi-poulet", "price": 8.50 },
+      { "name": "Menu blanc de poulet", "price": 8.00 },
+      { "name": "Menu cuisse", "price": 7.00 },
+      { "name": "Menu pilons (3)", "price": 7.00 },
+      { "name": "Menu ailes (4)", "price": 7.00 },
+      { "name": "Menu tenders (3)", "price": 7.00 },
+      { "name": "Menu saucisses (2)", "price": 7.00 },
+      { "name": "Menu donuts", "price": 6.50 },
+      { "name": "Menu bricks", "price": 6.50 },
+      { "name": "Menu Dames", "price": 7.50 },
+      { "name": "Menu familial", "price": 30.00 }
+    ],
+    "accompagnements": [
+      { "name": "Riz thaï poulet", "price": 3.50 },
+      { "name": "Allocos", "price": 3.50 },
+      { "name": "Pâtes poulet crème", "price": 3.50 },
+      { "name": "Légumes grillés croquants", "price": 3.50 },
+      { "name": "Pommes de terre", "price": 3.50 }
+    ],
+    "sauces": [
+      { "name": "Sauce oignon", "price": 0.50 },
+      { "name": "Sauce verte", "price": 0.50 },
+      { "name": "Sauce piquante", "price": 0.50 }
+    ],
+    "boissons": [
+      { "name": "Gingembre 25cl", "price": 2.00 },
+      { "name": "Bissap 25cl", "price": 2.00 },
+      { "name": "Canette 33cl", "price": 1.50 }
+    ],
+    "desserts": [
+      { "name": "Tiramisu", "price": 3.00 },
+      { "name": "Tarte au daim", "price": 2.50 }
+    ]
+  },
+  "content": {
+    "hero_title": "Le vrai goût du poulet braisé",
+    "hero_subtitle": "Mariné aux épices, braisé au feu et servi généreusement, à emporter ou en Click & Collect",
+    "call_to_action": "Découvrir la carte",
+    "order_button": "Commander"
+  },
+  "social": {
+    "facebook": "https://facebook.com/rostipoulet",
+    "instagram": "https://instagram.com/rostipoulet",
+    "google_reviews": "4.8",
+    "google_reviews_count": 150
+  },
+  "images": {
+    "hero": "unnamed.webp",
+    "boissons": "unnamed (1).webp",
+    "carte": "unnamed (2).webp",
+    "fritures": "unnamed (3).webp",
+    "poulet_braise": "unnamed (4).webp",
+    "assiette": "unnamed (5).webp"
+  },
+  "security": {
+    "https_enabled": true,
+    "hsts_enabled": true,
+    "content_security_policy": "default-src 'self'"
+  },
+  "performance": {
+    "image_optimization": "webp",
+    "lazy_loading": true,
+    "gzip_compression": true
+  },
+  "legal": {
+    "privacy_policy_url": "/privacy.html",
+    "terms_of_service_url": "/conditions.html",
+    "legal_notice_url": "/mentions-legales.html",
+    "gdpr_compliant": true
+  },
+  "whatsapp": {
+    "enabled": true,
+    "phone": "33612345678",
+    "message": "Bonjour, comment puis-je vous aider ?"
+  },
+  "email_templates": {
+    "confirmation": {
+      "subject": "Confirmation de votre commande",
+      "body": "Merci pour votre commande ! Elle sera prête à récupérer au créneau choisi."
+    },
+    "reminder": {
+      "subject": "Votre commande vous attend",
+      "body": "Rappel : votre commande est à récupérer aujourd'hui à [HEURE]."
+    }
+  },
+  "localization": {
+    "date_format": "DD/MM/YYYY",
+    "time_format": "HH:MM",
+    "currency": "EUR"
+  },
+  "version": "1.1",
+  "last_updated": "2024-01-15"
+}

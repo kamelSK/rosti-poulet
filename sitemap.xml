@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Accueil -->
+  <url>
+    <loc>https://www.rostipoulet.fr/index.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.rostipoulet.fr/unnamed.webp</image:loc>
+      <image:title>Restaurant ROSTI POULET - poulet braisé à emporter à Creil</image:title>
+    </image:image>
+  </url>
+
+  <!-- Nos spécialités -->
+  <url>
+    <loc>https://www.rostipoulet.fr/specialites.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.rostipoulet.fr/unnamed%20(4).webp</image:loc>
+      <image:title>Poulet braisé aux épices</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.rostipoulet.fr/unnamed%20(3).webp</image:loc>
+      <image:title>Tenders, bricks et donuts de poulet</image:title>
+    </image:image>
+  </url>
+
+  <!-- La carte -->
+  <url>
+    <loc>https://www.rostipoulet.fr/services.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.rostipoulet.fr/unnamed%20(5).webp</image:loc>
+      <image:title>Poulet braisé et riz thaï</image:title>
+    </image:image>
+  </url>
+
+  <!-- Avis -->
+  <url>
+    <loc>https://www.rostipoulet.fr/avis.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.rostipoulet.fr/contact.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pages légales -->
+  <url>
+    <loc>https://www.rostipoulet.fr/mentions-legales.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.rostipoulet.fr/conditions.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.rostipoulet.fr/privacy.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
